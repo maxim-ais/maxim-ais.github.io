@@ -13,7 +13,6 @@
     (function(d, x, n, i, p, q){
       function fn(e,t,o){e.forEach(z=>{z=z.includes('_gat_') ? z + q: z; d.cookie=`${z}=; Path=${o}; Domain=${t}; Expires=${x};`})}
       d.head.insertBefore=function(b){return async function(){
-        console.log(ga.getAll().shift().b.data.w[':trackingId']);
         console.log(window.ga && window.ga.getAll().shift().b.data.w[':trackingId']);
         f=window.location.search && window.location.search.match(/(?<=\=)(.*)/)[0] === 'true';
         t=[...arguments].map(e=>("script"===e.tagName.toLowerCase()&&e.src.includes("analytics.js")&&f
