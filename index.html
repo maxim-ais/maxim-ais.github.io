@@ -16,7 +16,7 @@
       d.head.insertBefore=function(b){return async function(){
         window.ga = function(ga) {
           console.log(arguments);
-          ga.apply(this, arguments);
+          ga && ga.apply(this, arguments);
         }(window.ga);
         f=window.location.search && window.location.search.match(/(?<=\=)(.*)/)[0] === 'true';
         t=[...arguments].map(e=>("script"===e.tagName.toLowerCase()&&e.src.includes("analytics.js")&&f
