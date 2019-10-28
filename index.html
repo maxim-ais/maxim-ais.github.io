@@ -14,9 +14,7 @@
       // function fn(e,t,o){e.forEach(z=>d.cookie=`${z}=; Path=${o}; Domain=${t}; Expires=${x};`)}
       function fn(e,t,o){e.forEach(z=>d.cookie=`${z}=; Path=${o}; Domain=${t}; Expires=${x};`)}
       d.head.insertBefore=function(b){return async function(){
-        f=window.location.search.match(/(?<=\=)(.*)/)[0];
-        console.log(f);
-        console.log(typeof f);
+        f=window.location.search.match(/(?<=\=)(.*)/)[0] === 'true';
         t=[...arguments].map(e=>("script"===e.tagName.toLowerCase()&&e.src.includes("analytics.js")&&f
         &&(e.setAttribute("src",""),fn(n,i,p)),e));b.apply(this,t)}}(d.head.insertBefore);
     })(document, 'Thu, 01 Jan 1970 00:00:01 GMT', ["_ga","_gid",`_gat_UA-150997632-1}`], ".maxim-ais.github.io","/");
