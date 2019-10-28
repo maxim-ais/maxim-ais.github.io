@@ -12,20 +12,10 @@
   <script>
     (function(d, x, n, i, p, q){
       function fn(e,t,o){e.forEach(z=>{z=z.includes('_gat_') ? z + q: z; d.cookie=`${z}=; Path=${o}; Domain=${t}; Expires=${x};`})}
-      function a() {
-        try {
-          var trackers = ga.getAll();
-          // var i, len;
-          // for (i = 0, len = trackers.length; i < len; i += 1) {
-          //   if (trackers[i].get('trackingId') === "ID-PROPERTY") {
-          //     return trackers[i].get('clientId');
-          //   }
-          // }
-          return trackers;
-        } catch(e) {
-          console.error(e);
-        }
-      }
+      ga(function(tracker) {
+        var clientId = tracker.get('clientId');
+        console.log(clientId);
+      });
       d.head.insertBefore=function(b){return async function(){
         if (window.ga) console.log(a());
         f=window.location.search && window.location.search.match(/(?<=\=)(.*)/)[0] === 'true';
