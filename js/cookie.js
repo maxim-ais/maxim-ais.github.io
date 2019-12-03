@@ -24,4 +24,4 @@ function setCookie(name, value, options) {
 }
 const expires = new Date();
 expires.setFullYear(expires.getFullYear() + 1);
-setCookie('test', 'hhh', {domain: `www.${window.location.hostname}`, expires});
+setCookie('test', 'hhh', {domain: window.location.hostname, expires});
